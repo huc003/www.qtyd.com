@@ -1,11 +1,12 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/5/3
- * Time: 14:32
+ * User: huc
+ * Date: 2018/5/7
+ * Time: 11:20
+ * Description:
  */
-$this->load->library('session');
+$this->load->library('pagination');
 ?>
 <!doctype html>
 <html lang="en">
@@ -39,62 +40,8 @@ $this->load->library('session');
     <script src="../../dist/components/form.js"></script>
     <script src="../../dist/components/transition.js"></script>
     <script src="../../dist/semantic.min.js"></script>
-    <script>
-        $('iframe').iFrameResize({
-            autoResize: true,
-            heightCalculationMethod: 'bodyScroll'
-        });
-        $(function () {
-            $('#user').bind('click',function () {
-                $('#user_d').slideToggle();
-            })
-        })
-    </script>
-    <style>
-        iframe {
-            border: none;
-            width: calc(100% + 2em);
-            margin: 0em -1em;
-            height: 900px;
-        }
-        iframe html {
-            overflow: hidden;
-        }
-        iframe body {
-            padding: 0em;
-        }
-        body{
-            overflow: hidden;
-        }
-    </style>
 </head>
 <body>
-
-<div class="ui top attached" style="width: 100%;height: 60px;background: #00B5AD">
-    <div style="float:left;padding: 5px;">
-        sdsds
-    </div>
-    <div style="float:right;padding: 5px;">
-        <div class="ui buttons">
-            <button class="ui button"><?php echo $_SESSION['username']?></button>
-            <div class="ui floating dropdown icon button" tabindex="0" id="user">
-                <i class="dropdown icon"></i>
-                <div class="menu transition" id="user_d" tabindex="-1">
-                    <div class="item">忘记密码</div>
-                    <div class="item"><a href="/admin/user/out">注销</a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div>
-    <div style="float:left;width:13%;height: auto;padding-left:10px; ">
-        <iframe src="left" width="100%" scrolling="no"></iframe>
-    </div>
-    <div style="float:right;width:87%;height: 900px;padding-right: 30px;">
-        <iframe src="right?controller=<?php if($_SESSION['controller']!=''){echo $_SESSION['controller'];}else{echo '/welcome/defaultRight';}?>&tb1=<?php if($_SESSION['tb1']!=''){echo $_SESSION['tb1'];}?>&tb2=<?php if($_SESSION['tb2']!=''){echo $_SESSION['tb2'];}?>" name="iframe_a" width="100%" scrolling="no"></iframe>
-    </div>
-</div>
+客户银行卡
 </body>
 </html>
-

@@ -2,6 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends Admin_Controller {
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('admin/menu_model');
+    }
+
     /**
 	 * Index Page for this controller.
 	 *
@@ -52,7 +59,14 @@ class Welcome extends Admin_Controller {
     }
 
     public function left(){
-        $this->_view('left');
+
+        $r = $this->menu_model->menu_list();
+
+        log_message('info',json_encode($r));
+        $this->mdata['father_list'] = $r['father_list'];
+        $this->mdata['child_list'] = $r['child_list'];
+
+        $this->_view('admin/left');
     }
 
     public function right(){
@@ -85,6 +99,6 @@ class Welcome extends Admin_Controller {
      * Description:加载默认的提示页面
      */
     public function defaultRight(){
-        $this->_view('right');
+        $this->_view('admin/right');
     }
 }

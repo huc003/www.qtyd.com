@@ -95,8 +95,13 @@ class User extends Admin_Controller
         $config['page_query_string'] = TRUE;
         $this->pagination->initialize($config);
 
-        $this->_view('admin/client_list');
+        $this->_view('admin/user/client_list');
     }
+
+    public function client_bank_list(){
+        $this->_view('admin/user/client_bank_list');
+    }
+
 
 
     public function out(){

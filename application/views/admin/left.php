@@ -40,56 +40,54 @@ $this->load->library('session');
     <script src="../dist/components/transition.js"></script>
     <script src="../dist/semantic.min.js"></script>
     <script>
-        $(function () {
-            $('#cd1').bind('click',function () {
-                $('#content1').slideToggle();
-            })
-            $('#cd2').bind('click',function () {
-                $('#content2').slideToggle();
-            })
-            $('#cd3').bind('click',function () {
-                $('#content3').slideToggle();
-            })
-        })
 
-        function a(id) {
+        function child(id) {
+            $('.item').removeClass('active');
             $('#'+id).addClass('active');
+        }
+
+        function father(node_id) {
+            $('#'+node_id).slideToggle();
         }
 
     </script>
 </head>
 <body>
 <div class="ui styled accordion">
-    <div class="title" id="cd1"><i class="dropdown icon"></i>客户服务</div>
-    <div class="content <?php if($_SESSION['tb1']=='content1'){echo 'active';}?>" id="content1">
-        <p class="transition">
-            <div class="ui vertical pointing menu">
-                <a class="item <?php if($_SESSION['tb2']=='content1-a1'){echo 'active';}?>" onclick="a('content1-a1')" id="content1-a1" href="right?controller=/admin/user/client_list&tb1=content1&tb2=content1-a1" target="iframe_a">客户列表 </a>
-                <a class="item">Messages </a>
-                <a class="item">好友 </a>
-            </div>
-        </p>
-    </div>
-    <div class="title"  id="cd2"><i class="dropdown icon"></i>菜单2</div>
-    <div class="content" id="content2">
-        <p class="transition">
-            <div class="ui vertical pointing menu">
-                <a class="item">Home </a>
-                <a class="item">Messages </a>
-                <a class="item">好友 </a>
-            </div>
-        </p>
-    </div>
-    <div class="title"  id="cd3"><i class="dropdown icon"></i>菜单3</div>
-    <div class="content" id="content3">
-        <p class="transition">
-            <div class="ui vertical pointing menu">
-                <a class="item">Home </a>
-                <a class="item">Messages </a>
-                <a class="item">好友 </a>
-            </div>
-        </p>
-    </div>
+    <?php foreach ($father_list as $father){?>
+        <div class="title" onclick="father('<?php echo $father->node_id;?>')"><i class="dropdown icon"></i><?php echo $father->title;?></div>
+        <div class="content <?php if($_SESSION['tb1']=="$father->node_id"){echo 'active';}?>" id="<?php echo $father->node_id;?>" style="border: none">
+            <p class="transition">
+                <div class="ui vertical pointing menu">
+                    <?php foreach ($child_list as $child){?>
+                        <?php if("$child->father_id"=="$father->id"){?>
+                            <a class="item <?php if($_SESSION['tb2']=="$child->node_id"){echo 'active';}?>" onclick="child('<?php echo $child->node_id;?>')" id="<?php echo $child->node_id;?>" href="<?php echo $child->href;?>&tb1=<?php echo $father->node_id;?>&tb2=<?php echo $child->node_id;?>" target="iframe_a"><?php echo $child->title;?> </a>
+                        <?php }?>
+                    <?php }?>
+                </div>
+            </p>
+        </div>
+    <?php }?>
+<!--    <div class="title"  id="cd2"><i class="dropdown icon"></i>菜单2</div>-->
+<!--    <div class="content" id="content2">-->
+<!--        <p class="transition">-->
+<!--            <div class="ui vertical pointing menu">-->
+<!--                <a class="item">Home </a>-->
+<!--                <a class="item">Messages </a>-->
+<!--                <a class="item">好友 </a>-->
+<!--            </div>-->
+<!--        </p>-->
+<!--    </div>-->
+<!--    <div class="title"  id="cd3"><i class="dropdown icon"></i>菜单3</div>-->
+<!--    <div class="content" id="content3">-->
+<!--        <p class="transition">-->
+<!--            <div class="ui vertical pointing menu">-->
+<!--                <a class="item">Home </a>-->
+<!--                <a class="item">Messages </a>-->
+<!--                <a class="item">好友 </a>-->
+<!--            </div>-->
+<!--        </p>-->
+<!--    </div>-->
 </div>
 </body>
 </html>
