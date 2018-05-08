@@ -42,6 +42,14 @@ $this->load->library('pagination');
     <script src="../../dist/semantic.min.js"></script>
 </head>
 <body>
-客户银行卡
+<div style="padding: 5px;">
+    <div class="ui breadcrumb">
+        <a class="section">客户服务</a>
+        <i class="right angle icon divider"></i>
+        <a class="section">银行卡列表</a>
+        <!--    <i class="right angle icon divider"></i>-->
+        <!--    <div class="active section">T-Shirt</div>-->
+    </div>
+</div>
 </body>
 </html>

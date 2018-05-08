@@ -45,11 +45,10 @@ $this->load->helpers('url');
 
 </head>
 <body>
-<div class="ui success message hidden" id="message" style="position: fixed;margin-top:10px;line-height: 30px;width: 100%;">
+<div class="ui negative message hidden" id="message" style="position: fixed;margin-top:10px;line-height: 30px;width: 100%;">
     <i class="close icon"></i>
     <div class="header"><?php if($message){echo $message;}?>。 </div>
     <input type="hidden" value="<?php if($is_show){echo $is_show;}?>" id="is_show">
-<!--<p>现在你可以用你选择的用户名登录了</p>-->
 </div>
 <div class="ui middle aligned center aligned grid" >
     <div class="column">

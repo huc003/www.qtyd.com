@@ -10,8 +10,8 @@
 class menu_model extends MY_Model
 {
     public function menu_list(){
-        $father_sql = 'select * from dw_menu where father_id = 0';
-        $child_sql = 'select * from dw_menu where father_id <> 0';
+        $father_sql = 'select * from dw_menu where father_id = 0 order by sort asc';
+        $child_sql = 'select * from dw_menu where father_id <> 0 order by sort asc';
         return array('father_list'=>$this->query_sql($father_sql),'child_list'=>$this->query_sql($child_sql));
     }
 }

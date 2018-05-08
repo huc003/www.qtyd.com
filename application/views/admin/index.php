@@ -69,12 +69,11 @@ $this->load->library('session');
     </style>
 </head>
 <body>
-
 <div class="ui top attached" style="width: 100%;height: 60px;background: #00B5AD">
-    <div style="float:left;padding: 5px;">
-        sdsds
+    <div style="float:left;padding-right: 5px;padding-left:5px;padding-top:15px;">
+        <span style="font-family: 微软雅黑;font-size: 30px;color: #FFFFFF">祺天优贷</span>
     </div>
-    <div style="float:right;padding: 5px;">
+    <div style="float:right;padding-right:5px;padding-top:10px;">
         <div class="ui buttons">
             <button class="ui button"><?php echo $_SESSION['username']?></button>
             <div class="ui floating dropdown icon button" tabindex="0" id="user">

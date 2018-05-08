@@ -40,7 +40,7 @@ class Welcome extends Admin_Controller {
         $this->mdata['message'] = $message;
         $this->mdata['username'] = $username;
         $this->mdata['is_show'] = $is_show;
-        $this->_view('login');
+        $this->_view('admin/login');
 	}
 
     /**

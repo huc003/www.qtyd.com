@@ -2,11 +2,10 @@
 /**
  * Created by PhpStorm.
  * User: huc
- * Date: 2018/5/4
- * Time: 9:53
+ * Date: 2018/5/8
+ * Time: 11:11
  * Description:
  */
-$this->load->library('pagination');
 ?>
 <!doctype html>
 <html lang="en">
@@ -15,7 +14,7 @@ $this->load->library('pagination');
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>系统设置</title>
     <link rel="stylesheet" type="text/css" href="../../dist/components/reset.css">
     <link rel="stylesheet" type="text/css" href="../../dist/components/site.css">
     <link rel="stylesheet" type="text/css" href="../../dist/components/container.css">
@@ -44,11 +43,9 @@ $this->load->library('pagination');
 <body>
 <div style="padding: 5px;">
     <div class="ui breadcrumb">
-        <a class="section">客户服务</a>
+        <a class="section">系统设置</a>
         <i class="right angle icon divider"></i>
-        <a class="section">客户列表</a>
-        <!--    <i class="right angle icon divider"></i>-->
-        <!--    <div class="active section">T-Shirt</div>-->
+        <a class="section">系统参数</a>
     </div>
 </div>
 <form action="/admin/user/client_list" method="post">
@@ -67,36 +64,45 @@ $this->load->library('pagination');
         </div>
     </div>
 </form>
-
 <div style="padding: 5px;">
     <table class="ui green striped table">
         <thead>
-            <tr>
-                <th>用户ID</th>
-                <th>用户名</th>
-                <th>昵称</th>
-                <th>注册时间</th>
-            </tr>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>NID</th>
+            <th>VALUE</th>
+            <th>TYPE</th>
+            <th>STYLE</th>
+            <th>状态</th>
+        </tr>
         </thead>
         <tbody>
-        <?php foreach($client_list as $rs){?>
+        <?php foreach($system_list as $rs){?>
             <tr>
-                <td><?php echo $rs->user_id;?></td>
-                <td><?php echo $rs->username;?></td>
-                <td><?php echo $rs->nick_name;?></td>
-                <td><?php echo date("Y-m-d H:i:s",$rs->addtime);?></td>
+                <td><?php echo $rs->id;?></td>
+                <td><?php echo $rs->name;?></td>
+                <td><?php echo $rs->nid;?></td>
+                <td><?php echo $rs->value;?></td>
+                <td><?php echo $rs->type;?></td>
+                <td><?php echo $rs->style;?></td>
+                <td><?php echo $rs->status;?></td>
             </tr>
         <?php }?>
         </tbody>
         <tfoot>
-            <tr>
-                <th colspan="4">
-                    <div class="ui left floated pagination ">
-                        <div class="ui left floated small primary labeled icon button" style="padding-top:13.5px;padding-bottom:13.5px;"><i class="user icon"></i> 添加用户 </div>
-                    </div>
-                    <?php echo $this->pagination->create_admin_links(); ?>
-                </th>
-            </tr>
+        <tr>
+            <th colspan="7">
+                <a href="/welcome/right?controller=/admin/system/add_system_page&tb1=<?php echo $_SESSION['tb1'];?>&tb2=<?php echo $_SESSION['tb2'];?>" style="color: #FFFFFF">
+                <div class="ui left floated pagination ">
+                    <div class="ui left floated small primary labeled icon button" style="padding-top:13.5px;padding-bottom:13.5px;"><i class="user icon"></i>
+                        添加参数 </div>
+
+                </div>
+                </a>
+                <?php echo $this->pagination->create_admin_links(); ?>
+            </th>
+        </tr>
         </tfoot>
     </table>
 </div>

@@ -31,7 +31,7 @@ $this->load->library('session');
     <link rel="stylesheet" type="text/css" href="../dist/components/list.css">
     <link rel="stylesheet" type="text/css" href="../dist/components/message.css">
     <link rel="stylesheet" type="text/css" href="../dist/components/icon.css">
-    <link rel="stylesheet" type="text/css" href="../dist/accordion/accordion.css">
+<!--    <link rel="stylesheet" type="text/css" href="../dist/accordion/accordion.css">-->
     <link rel="stylesheet" type="text/css" href="../dist/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="../dist/components/dropdown.css">
 
@@ -53,7 +53,7 @@ $this->load->library('session');
     </script>
 </head>
 <body>
-<div class="ui styled accordion">
+<div class="ui styled accordion" style="width: 230px;">
     <?php foreach ($father_list as $father){?>
         <div class="title" onclick="father('<?php echo $father->node_id;?>')"><i class="dropdown icon"></i><?php echo $father->title;?></div>
         <div class="content <?php if($_SESSION['tb1']=="$father->node_id"){echo 'active';}?>" id="<?php echo $father->node_id;?>" style="border: none">
