@@ -42,7 +42,6 @@ $this->load->helpers('url');
             max-width: 450px;
         }
     </style>
-
 </head>
 <body>
 <div class="ui negative message hidden" id="message" style="position: fixed;margin-top:10px;line-height: 30px;width: 100%;">
@@ -59,7 +58,6 @@ $this->load->helpers('url');
             </div>
         </h2>
         <form class="ui large form" action="<?php echo site_url("admin/user/login"); ?>" method="post">
-<!--        <form class="ui large form" action="/admin/user/login" method="post">-->
             <div class="ui stacked segment">
                 <div class="field">
                     <div class="ui left icon input">

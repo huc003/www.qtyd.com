@@ -60,11 +60,16 @@ class Welcome extends Admin_Controller {
 
     public function left(){
 
-        $r = $this->menu_model->menu_list();
+	    if(!isset($_SESSION['father_list'])){
+            $r = $this->menu_model->menu_list();
+            $_SESSION['father_list'] = $r['father_list'];
+            $_SESSION['child_list'] = $r['child_list'];
+        }
+//        log_message('info',json_encode($r));
+//        $this->mdata['father_list'] = $r['father_list'];
+//        $this->mdata['child_list'] = $r['child_list'];
 
-        log_message('info',json_encode($r));
-        $this->mdata['father_list'] = $r['father_list'];
-        $this->mdata['child_list'] = $r['child_list'];
+
 
         $this->_view('admin/left');
     }
@@ -76,8 +81,12 @@ class Welcome extends Admin_Controller {
         $tb1 = $this->input->get('tb1');
         $tb2 = $this->input->get('tb2');
 
-        $_SESSION['tb1'] = $tb1;
-        $_SESSION['tb2'] = $tb2;
+        if(isset($tb1)){
+            $_SESSION['tb1'] = $tb1;
+        }
+        if(isset($tb2)){
+            $_SESSION['tb2'] = $tb2;
+        }
         $_SESSION['controller'] = $controller;
 
         log_message('info',$controller);

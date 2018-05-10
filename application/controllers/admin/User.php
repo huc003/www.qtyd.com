@@ -41,9 +41,14 @@ class User extends Admin_Controller
             exit;
         }
 
+        $userinfo = $this->user_model->get_user_menu_list();
+        log_message('info','-----======'.$userinfo->purview);
+
         $_SESSION['tb1'] = '';
         $_SESSION['tb2'] = '';
         $_SESSION['controller'] = '';
+        $_SESSION['user_id'] = $userinfo->user_id;
+        $_SESSION['purview'] = $userinfo->purview;
 
         //用户登录信息
         $_SESSION['username']=$username;
@@ -61,14 +66,19 @@ class User extends Admin_Controller
      */
     public function client_list(){
 
-
-//        $url_info = $this->geturl($_SERVER['QUERY_STRING'],$this->key_url_md_5);//接收所有参数
-//
-//        $tb1=$url_info['tb1'];//解密对应参数
-//        $tb2 = $url_info['tb2'];
-//
-//        log_message('info',$tb1);
-//        log_message('info',$tb2);
+        $user_id = $this->input->post('user_id');
+        $username = $this->input->post('username');
+        $nickname = $this->input->post('nickname');
+        $where = '';
+        if($user_id){
+            $where.=' and user_id = '.$user_id;
+        }
+        if($username){
+            $where.=" and username = '$username'";
+        }
+        if($nickname){
+            $where.=" and nick_name like '%".$nickname."%'";
+        }
 
         $this->load->library('pagination');
 
@@ -78,7 +88,8 @@ class User extends Admin_Controller
 
         $data = array(
             "limit" => $limit,
-            "offset" => $offset
+            "offset" => $offset,
+            "where" => $where
         );
 
         $r = $this->user_model->get_client_list($data);

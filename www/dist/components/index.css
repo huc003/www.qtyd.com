@@ -1,0 +1,23 @@
+.caozuo_btn_40{
+    color: #FFFFFF;
+    background: #009c95;
+    display: block;
+    width:40px;
+    line-height: 20px;
+    text-align: center;
+    border-radius:4px;
+}
+.caozuo_btn_fleft{
+    float: left;
+}
+.caozuo_btn_mright{
+    margin-right: 5px;
+}
+a{
+    color: #FFFFFF;
+}
+a:hover{
+    color: #FFFFFF;
+    text-decoration-line: none;
+    background: #008D86;
+}

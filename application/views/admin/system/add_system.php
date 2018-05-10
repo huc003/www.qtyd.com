@@ -6,6 +6,7 @@
  * Time: 11:37
  * Description:
  */
+$this->load->library('form_validation');
 ?>
 <!doctype html>
 <html lang="en">
@@ -41,73 +42,67 @@
     <script src="../../dist/semantic.min.js"></script>
     <script>
         $(function () {
-            $('.message .close').bind('click', function() {
-                $("#message").hide();
-            });
         })
     </script>
 </head>
 <body>
 <div style="padding: 5px;">
     <div class="ui breadcrumb">
-        <a class="section">系统设置</a>
+        <a class="section">系统参数</a>
         <i class="right angle icon divider"></i>
         <a class="section">添加系统参数</a>
     </div>
 </div>
-<div class="ui negative message" id="message" style="margin-top:10px;line-height: 30px;width: 100%;">
-    <i class="close icon"></i>
-    <div class="header">NAME不能为空。 </div>
-    <input type="hidden" value="" id="is_show">
-</div>
 <div style="padding: 5px;margin-top:20px;">
-    <form class="ui form">
+    <form class="ui form" action="<?php echo site_url('/admin/system/add_system'); ?>" method="post">
         <h4 class="ui dividing header">添加参数</h4>
         <div class="fields">
             <div class="three wide field">
                 <label>NAME</label>
-                <input type="text" name="name" maxlength="3" placeholder="汉字或英文">
+                <input type="text" name="name" maxlength="30" placeholder="汉字或英文" value="<?php echo $this->input->post('name');?>">
+                <span style="color:red "><?php echo form_error('name'); ?></span>
             </div>
             <div class="three wide field" >
-                <label>VALUE</label>
-                <div class="field" id="system_id">
-                    <input type="text" name="value" placeholder="整数或字符串" >
+                <label>NID</label>
+                <div class="field">
+                    <input type="text" name="nid" placeholder="字符串"  value="<?php echo $this->input->post('nid');?>">
+                    <span style="color:red "><?php echo form_error('nid'); ?></span>
                 </div>
             </div>
         </div>
         <div class="fields">
             <div class="three wide field" >
-                <label>TYPE</label>
-                <div class="field" id="system_id">
-                    <input type="text" name="type" placeholder="字符串" >
+                <label>VALUE</label>
+                <div class="field">
+                    <input type="text" name="value" placeholder="整数或字符串"  value="<?php echo $this->input->post('value');?>">
+                    <span style="color:red "><?php echo form_error('value'); ?></span>
                 </div>
             </div>
+            <div class="three wide field" >
+                <label>TYPE</label>
+                <div class="field">
+                    <input type="text" name="type" placeholder="字符串"  value="<?php echo $this->input->post('type');?>">
+                    <span style="color:red "><?php echo form_error('type'); ?></span>
+                </div>
+            </div>
+        </div>
+        <div class="fields">
             <div class="three wide field">
                 <label>STYLE</label>
                 <div class="field">
-                    <input type="text" name="style" placeholder="样式">
+                    <input type="text" name="style" placeholder="样式" value="<?php echo $this->input->post('style');?>">
+                    <span style="color:red "><?php echo form_error('style'); ?></span>
                 </div>
             </div>
-        </div>
-        <div class="fields">
             <div class="three wide field">
                 <label>状态</label>
                 <div class="field">
                     <select class="ui fluid search dropdown" name="status">
-                        <option value="">Month</option>
-                        <option value="1">January</option>
-                        <option value="2">February</option>
-                        <option value="3">March</option>
-                        <option value="4">April</option>
-                        <option value="5">May</option>
-                        <option value="6">June</option>
-                        <option value="7">July</option>
-                        <option value="8">August</option>
-                        <option value="9">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
+                        <option value="" <?php if($this->input->post('status')==0){echo 'selected';}?>>请选择</option>
+                        <option value="1" <?php if($this->input->post('status')==1){echo 'selected';}?>>有效</option>
+                        <option value="2" <?php if($this->input->post('status')==2){echo 'selected';}?>>无效</option>
                     </select>
+                    <span style="color:red "><?php echo form_error('status'); ?></span>
                 </div>
             </div>
         </div>

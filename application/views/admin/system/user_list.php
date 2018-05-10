@@ -2,11 +2,10 @@
 /**
  * Created by PhpStorm.
  * User: huc
- * Date: 2018/5/4
- * Time: 9:53
+ * Date: 2018/5/10
+ * Time: 13:56
  * Description:
  */
-$this->load->library('pagination');
 ?>
 <!doctype html>
 <html lang="en">
@@ -32,8 +31,9 @@ $this->load->library('pagination');
     <link rel="stylesheet" type="text/css" href="../../dist/components/message.css">
     <link rel="stylesheet" type="text/css" href="../../dist/components/icon.css">
     <link rel="stylesheet" type="text/css" href="../../dist/accordion/accordion.css">
-    <link rel="stylesheet" type="text/css" href="../../dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="../../dist/semantic.css">
     <link rel="stylesheet" type="text/css" href="../../dist/components/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="../../dist/components/index.css">
 
     <script src="../../dist/jquery.min.js"></script>
     <script src="../../dist/assets/library/iframe.js"></script>
@@ -44,65 +44,65 @@ $this->load->library('pagination');
 <body>
 <div style="padding: 5px;">
     <div class="ui breadcrumb">
-        <a class="section">客户服务</a>
+        <a class="section">系统设置</a>
         <i class="right angle icon divider"></i>
-        <a class="section">客户列表</a>
-        <!--    <i class="right angle icon divider"></i>-->
-        <!--    <div class="active section">T-Shirt</div>-->
+        <a class="section">用户列表</a>
     </div>
 </div>
 <form action="/admin/user/client_list" method="post">
     <div style="padding: 5px;">
         <div class="ui input">
-            <input placeholder="用户id" type="text" name="user_id" value="<?php echo $this->input->post('user_id');?>">
+            <input placeholder="用户id" type="text" name="user_id">
         </div>
         <div class="ui input">
-            <input placeholder="用户名" type="text" name="username" value="<?php echo $this->input->post('username');?>">
+            <input placeholder="用户名" type="text" name="username">
         </div>
         <div class="ui input">
-            <input placeholder="昵称" type="text" name="nickname" value="<?php echo $this->input->post('nickname');?>">
+            <input placeholder="昵称" type="text" name="nickname">
         </div>
         <div class="ui buttons">
             <input value="查询" type="submit" class="ui fluid teal submit button" style="height:37px;">
         </div>
     </div>
 </form>
-
 <div style="padding: 5px;">
     <table class="ui green striped table">
         <thead>
-            <tr>
-                <th>用户ID</th>
-                <th>用户名</th>
-                <th>身份证</th>
-                <th>姓名</th>
-                <th>性别</th>
-                <th>昵称</th>
-                <th>注册时间</th>
-            </tr>
+        <tr>
+            <th>user_id</th>
+            <th>用户名</th>
+            <th>性别</th>
+            <th>姓名</th>
+            <th>注册时间</th>
+            <th>操作</th>
+        </tr>
         </thead>
         <tbody>
-        <?php foreach($client_list as $rs){?>
+        <?php foreach($user_list as $rs){?>
             <tr>
                 <td><?php echo $rs->user_id;?></td>
                 <td><?php echo $rs->username;?></td>
-                <td><?php echo $rs->card_id;?></td>
+                <td><?php echo $rs->sex;?></td>
                 <td><?php echo $rs->realname;?></td>
-                <td><?php if($rs->sex==1){echo '女';}else{echo '男';};?></td>
-                <td><?php echo $rs->nick_name;?></td>
-                <td><?php echo date("Y-m-d H:i:s",$rs->addtime);?></td>
+                <td><?php echo $rs->addtime;?></td>
+                <td><a href="/welcome/right?controller=/admin/system/update_authority_page/<?php echo $rs->user_id;?>&tb1=<?php echo $_SESSION['tb1'];?>&tb2=<?php echo $_SESSION['tb2'];?>" class="caozuo_btn_40 caozuo_btn_fleft caozuo_btn_mright">
+                        编辑</a>
+                </td>
             </tr>
         <?php }?>
         </tbody>
         <tfoot>
-            <tr>
-                <th colspan="7">
+        <tr>
+            <th colspan="8">
+                <a href="/welcome/right?controller=/admin/system/add_authority_page&tb1=<?php echo $_SESSION['tb1'];?>&tb2=<?php echo $_SESSION['tb2'];?>" style="color: #FFFFFF">
                     <div class="ui left floated pagination ">
-                        <div class="ui left floated small primary labeled icon button" style="padding-top:13.5px;padding-bottom:13.5px;"><i class="user icon"></i> 添加用户 </div>
+                        <div class="ui left floated small primary labeled icon button" style="padding-top:13.5px;padding-bottom:13.5px;"><i class="user icon"></i>
+                            添加用户 </div>
                     </div>
-                    <?php echo $this->pagination->create_admin_links(); ?>
-                </th>
-            </tr>
+                </a>
+                <?php echo $this->pagination->create_admin_links(); ?>
+            </th>
+        </tr>
         </tfoot>
     </table>
 </div>
