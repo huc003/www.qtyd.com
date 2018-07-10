@@ -14,5 +14,9 @@ class Banner extends Admin_Controller{
         $this->_view('banner/banner00'.$id.'.html');
     }
 
+    public function ppt($id){
+        log_message('info',$id);
+        $this->_view('ppt/ppt00'.$id.'.html');
+    }
 
 }

@@ -1114,3 +1114,87 @@ INFO - 2018-07-10 06:23:30 --> 1
 INFO - 2018-07-10 06:23:30 --> File loaded: D:\php_space\www.qtyd.com\application\views\banner/banner001.html
 INFO - 2018-07-10 06:23:30 --> Final output sent to browser
 DEBUG - 2018-07-10 06:23:30 --> Total execution time: 0.0460
+INFO - 2018-07-10 06:33:11 --> Config Class Initialized
+INFO - 2018-07-10 06:33:11 --> Hooks Class Initialized
+DEBUG - 2018-07-10 06:33:11 --> UTF-8 Support Enabled
+INFO - 2018-07-10 06:33:11 --> Utf8 Class Initialized
+INFO - 2018-07-10 06:33:11 --> URI Class Initialized
+INFO - 2018-07-10 06:33:11 --> Router Class Initialized
+INFO - 2018-07-10 06:33:11 --> Output Class Initialized
+INFO - 2018-07-10 06:33:11 --> Security Class Initialized
+DEBUG - 2018-07-10 06:33:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-07-10 06:33:11 --> Input Class Initialized
+INFO - 2018-07-10 06:33:11 --> Language Class Initialized
+INFO - 2018-07-10 06:33:11 --> Loader Class Initialized
+INFO - 2018-07-10 06:33:11 --> Controller Class Initialized
+DEBUG - 2018-07-10 06:33:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-07-10 06:33:12 --> Session: Class initialized using 'files' driver.
+INFO - 2018-07-10 06:33:12 --> Helper loaded: url_helper
+INFO - 2018-07-10 06:33:12 --> Helper loaded: common_helper
+INFO - 2018-07-10 06:33:12 --> 1
+INFO - 2018-07-10 06:33:12 --> File loaded: D:\php_space\www.qtyd.com\application\views\ppt/ppt001.html
+INFO - 2018-07-10 06:33:12 --> Final output sent to browser
+DEBUG - 2018-07-10 06:33:12 --> Total execution time: 0.2390
+INFO - 2018-07-10 06:34:23 --> Config Class Initialized
+INFO - 2018-07-10 06:34:23 --> Hooks Class Initialized
+DEBUG - 2018-07-10 06:34:23 --> UTF-8 Support Enabled
+INFO - 2018-07-10 06:34:23 --> Utf8 Class Initialized
+INFO - 2018-07-10 06:34:23 --> URI Class Initialized
+INFO - 2018-07-10 06:34:23 --> Router Class Initialized
+INFO - 2018-07-10 06:34:23 --> Output Class Initialized
+INFO - 2018-07-10 06:34:23 --> Security Class Initialized
+DEBUG - 2018-07-10 06:34:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-07-10 06:34:23 --> Input Class Initialized
+INFO - 2018-07-10 06:34:23 --> Language Class Initialized
+INFO - 2018-07-10 06:34:23 --> Loader Class Initialized
+INFO - 2018-07-10 06:34:23 --> Controller Class Initialized
+DEBUG - 2018-07-10 06:34:23 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-07-10 06:34:23 --> Session: Class initialized using 'files' driver.
+INFO - 2018-07-10 06:34:23 --> Helper loaded: url_helper
+INFO - 2018-07-10 06:34:23 --> Helper loaded: common_helper
+INFO - 2018-07-10 06:34:23 --> 1
+INFO - 2018-07-10 06:34:23 --> File loaded: D:\php_space\www.qtyd.com\application\views\ppt/ppt001.html
+INFO - 2018-07-10 06:34:23 --> Final output sent to browser
+DEBUG - 2018-07-10 06:34:23 --> Total execution time: 0.0520
+INFO - 2018-07-10 06:36:01 --> Config Class Initialized
+INFO - 2018-07-10 06:36:01 --> Hooks Class Initialized
+DEBUG - 2018-07-10 06:36:01 --> UTF-8 Support Enabled
+INFO - 2018-07-10 06:36:01 --> Utf8 Class Initialized
+INFO - 2018-07-10 06:36:01 --> URI Class Initialized
+INFO - 2018-07-10 06:36:01 --> Router Class Initialized
+INFO - 2018-07-10 06:36:01 --> Output Class Initialized
+INFO - 2018-07-10 06:36:01 --> Security Class Initialized
+DEBUG - 2018-07-10 06:36:01 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-07-10 06:36:01 --> Input Class Initialized
+INFO - 2018-07-10 06:36:01 --> Language Class Initialized
+INFO - 2018-07-10 06:36:01 --> Loader Class Initialized
+INFO - 2018-07-10 06:36:01 --> Controller Class Initialized
+DEBUG - 2018-07-10 06:36:01 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-07-10 06:36:01 --> Session: Class initialized using 'files' driver.
+INFO - 2018-07-10 06:36:01 --> Helper loaded: url_helper
+INFO - 2018-07-10 06:36:01 --> Helper loaded: common_helper
+INFO - 2018-07-10 06:36:01 --> 1
+INFO - 2018-07-10 06:36:01 --> File loaded: D:\php_space\www.qtyd.com\application\views\ppt/ppt001.html
+INFO - 2018-07-10 06:36:01 --> Final output sent to browser
+DEBUG - 2018-07-10 06:36:01 --> Total execution time: 0.0470
+INFO - 2018-07-10 06:42:09 --> Config Class Initialized
+INFO - 2018-07-10 06:42:09 --> Hooks Class Initialized
+DEBUG - 2018-07-10 06:42:09 --> UTF-8 Support Enabled
+INFO - 2018-07-10 06:42:09 --> Utf8 Class Initialized
+INFO - 2018-07-10 06:42:09 --> URI Class Initialized
+INFO - 2018-07-10 06:42:09 --> Router Class Initialized
+INFO - 2018-07-10 06:42:09 --> Output Class Initialized
+INFO - 2018-07-10 06:42:09 --> Security Class Initialized
+DEBUG - 2018-07-10 06:42:09 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-07-10 06:42:09 --> Input Class Initialized
+INFO - 2018-07-10 06:42:09 --> Language Class Initialized
+INFO - 2018-07-10 06:42:09 --> Loader Class Initialized
+INFO - 2018-07-10 06:42:09 --> Controller Class Initialized
+DEBUG - 2018-07-10 06:42:09 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-07-10 06:42:09 --> Session: Class initialized using 'files' driver.
+INFO - 2018-07-10 06:42:09 --> Helper loaded: url_helper
+INFO - 2018-07-10 06:42:09 --> Helper loaded: common_helper
+INFO - 2018-07-10 06:42:09 --> 1
+INFO - 2018-07-10 06:42:09 --> File loaded: D:\php_space\www.qtyd.com\application\views\ppt/ppt001.html
+INFO - 2018-07-10 06:42:09 --> Final output sent to browser
+DEBUG - 2018-07-10 06:42:09 --> Total execution time: 0.0490
